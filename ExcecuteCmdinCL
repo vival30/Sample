@@ -1,0 +1,58 @@
+using System;
+using System.Diagnostics;
+using System.Windows.Forms;
+namespace Sample
+{
+    public class ScannercmdExecution
+    {
+        private bool flag = false;
+		public int ExecuteSonarScannerCommands(string command)
+        {
+            using (System.Diagnostics.Process proc = new System.Diagnostics.Process())
+            {
+                System.Diagnostics.ProcessStartInfo Info = new System.Diagnostics.ProcessStartInfo("cmd", "" + command);
+                int exitCode = 1;
+                try
+                {
+                    Info.UseShellExecute = false;
+                    Info.RedirectStandardOutput = true;
+                    Info.RedirectStandardError = true;
+                    Info.CreateNoWindow = true;
+                    proc.EnableRaisingEvents = true;
+                    proc.ErrorDataReceived += this.proc_DataReceived;
+                    proc.OutputDataReceived += this.proc_DataReceived;
+                    proc.Exited += new EventHandler(proc_Exitted);
+                    proc.StartInfo = Info;
+                    flag = true;
+                    proc.Start();
+                    proc.BeginOutputReadLine();
+                    proc.BeginErrorReadLine();
+                    while (flag)
+                    {
+                        //Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+                        Application.DoEvents();
+                    }
+                    proc.WaitForExit();
+                    exitCode = proc.ExitCode;
+                }
+                catch (Exception ex)
+                {
+                    LoggerClass.LogError("Error", ex);
+                }
+                return exitCode;
+            }
+        }
+        private void proc_DataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (e.Data != null)
+            {
+                string DataToWrite = e.Data.ToString();
+				LoggerClass.Log(DataToWrite);
+            }
+        }
+        private void proc_Exitted(object sender, System.EventArgs e) 
+        {
+            flag = false;
+        }
+    }
+}
