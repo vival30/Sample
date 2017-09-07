@@ -1,0 +1,497 @@
+Sonar log for sonar c# v6.4
+
+
+
+E:\header-samples-master>"C:\SonarAnalyzer\SonarQube.Scanner.MSBuild.exe" begin /k:"samplekey.cs"
+SonarQube Scanner for MSBuild 3.0
+Default properties file was found at C:\SonarAnalyzer\SonarQube.Analysis.xml
+Loading analysis properties from C:\SonarAnalyzer\SonarQube.Analysis.xml
+sonar.verbose=true was specified - setting the log verbosity to 'Debug'
+Pre-processing started.
+Preparing working directories...
+Using environment variables to determine the download directory...
+Removing the existing directory: E:\header-samples-master\.sonarqube
+Creating directory: E:\header-samples-master\.sonarqube
+13:51:29.012  13:51:29.007  Loading analysis properties from C:\SonarAnalyzer\SonarQube.Analysis.xml
+13:51:29.013  13:51:29.012  sonar.verbose=true was specified - setting the log verbosity to 'Debug'
+13:51:29.016  Updating build integration targets...
+13:51:29.018  The file SonarQube.Integration.ImportBefore.targets is up to date at C:\Users\527475\AppData\Local\Microsoft\MSBuild\15.0\Microsoft.Common.targets\ImportBefore
+13:51:29.019  The file SonarQube.Integration.ImportBefore.targets is up to date at C:\Users\527475\AppData\Local\Microsoft\MSBuild\14.0\Microsoft.Common.targets\ImportBefore
+13:51:29.02  The file SonarQube.Integration.ImportBefore.targets is up to date at C:\Users\527475\AppData\Local\Microsoft\MSBuild\12.0\Microsoft.Common.targets\ImportBefore
+13:51:29.023  Installed SonarQube.Integration.targets to E:\header-samples-master\.sonarqube\bin\targets
+13:51:29.024  Creating config and output folders...
+13:51:29.024  Creating directory: E:\header-samples-master\.sonarqube\conf
+13:51:29.025  Creating directory: E:\header-samples-master\.sonarqube\out
+13:51:29.03  Fetching analysis configuration settings...
+13:51:29.032  Downloading from http://localhost:9004/api/server/version...
+13:51:29.07  Fetching properties for project 'samplekey.cs' from http://localhost:9004/api/properties?resource=samplekey.cs...
+13:51:29.076  Downloading from http://localhost:9004/api/properties?resource=samplekey.cs...
+13:51:29.206  Downloading from http://localhost:9004/api/languages/list...
+13:51:29.232  Fetching quality profile for project 'samplekey.cs' from http://localhost:9004/api/qualityprofiles/search?projectKey=samplekey.cs...
+13:51:29.235  Downloading from http://localhost:9004/api/qualityprofiles/search?projectKey=samplekey.cs...
+13:51:29.351  Fetching active rules for quality profile 'cs-cri-60317' from http://localhost:9004/api/rules/search?f=repo,name,severity,lang,internalKey,templateKey,params,actives&ps=500&activation=true&qprofile=cs-cri-60317&p=1...
+13:51:29.352  Downloading from http://localhost:9004/api/rules/search?f=repo,name,severity,lang,internalKey,templateKey,params,actives&ps=500&activation=true&qprofile=cs-cri-60317&p=1...
+13:51:29.413  Fetching rules not active in quality profile 'cs-cri-60317' for language 'cs' from http://localhost:9004/api/rules/search?f=internalKey&ps=500&activation=false&qprofile=cs-cri-60317&p=1&languages=cs...
+13:51:29.414  Downloading from http://localhost:9004/api/rules/search?f=internalKey&ps=500&activation=false&qprofile=cs-cri-60317&p=1&languages=cs...
+13:51:29.76  Generating rulesets...
+13:51:29.79  Generating the FxCop ruleset: E:\header-samples-master\.sonarqube\conf\SonarQubeFxCop-cs.ruleset
+13:51:29.792  Local analyzer cache: C:\Users\527475\AppData\Local\Temp\5\.sonarqube\resources
+13:51:29.805  Writing Roslyn generated ruleset to E:\header-samples-master\.sonarqube\conf\SonarQubeRoslyn-cs.ruleset...
+13:51:29.841  Writing Roslyn analyzer additional file to E:\header-samples-master\.sonarqube\conf\cs\SonarLint.xml...
+13:51:29.85  Provisioning analyzer assemblies for cs...
+13:51:29.851  Installing required Roslyn analyzers...
+13:51:29.855  Processing plugin: csharp version 6.4.0.3347
+13:51:29.929  Cache hit: using plugin files from C:\Users\527475\AppData\Local\Temp\5\.sonarqube\resources\0
+13:51:29.953  Pre-processing succeeded.
+
+E:\header-samples-master>"C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe" /t:Rebuild HeaderSampleApplication.sln
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Building the projects in this solution one at a time. To enable parallel build, please add the "/m" switch.
+Build started 07-09-2017 13:51:37.
+Project "E:\header-samples-master\HeaderSampleApplication.sln" on node 1 (Rebuild target(s)).
+ValidateSolutionConfiguration:
+  Building solution configuration "Debug|Any CPU".
+Project "E:\header-samples-master\HeaderSampleApplication.sln" (1) is building "E:\header-samples-master\HeaderSampleApplication1\HeaderSampleApplication1.csproj" (2) on node 1 (Rebuild target(s)).
+CoreClean:
+  Deleting file "E:\header-samples-master\HeaderSampleApplication1\bin\Debug\HeaderSampleApplication1.exe.config".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication1\bin\Debug\HeaderSampleApplication1.exe".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication1\bin\Debug\HeaderSampleApplication1.pdb".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication1\obj\Debug\HeaderSampleApplication1.csprojResolveAssemblyReference.cache".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication1\obj\Debug\HeaderSampleApplication1.exe".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication1\obj\Debug\HeaderSampleApplication1.pdb".
+GenerateBindingRedirects:
+  No suggested binding redirects from ResolveAssemblyReferences.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CreateProjectSpecificDirs:
+  Directory "E:\header-samples-master\.sonarqube\out\\HeaderSampleApplication1_4535" doesn't exist. Skipping.
+  Creating directory "E:\header-samples-master\.sonarqube\out\\HeaderSampleApplication1_4535".
+  Directory "E:\header-samples-master\.sonarqube\conf\\HeaderSampleApplication1_4535" doesn't exist. Skipping.
+  Creating directory "E:\header-samples-master\.sonarqube\conf\\HeaderSampleApplication1_4535".
+CoreCompile:
+  C:\Program Files (x86)\MSBuild\14.0\bin\csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /platform:anycpu32bitpreferred /errorreport:prompt /warn:4 /define:CODE_ANALYSIS;DEBUG;TRACE /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Microsoft.CSharp.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Data.DataSetExtensions.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Data.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Net.Http.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Xml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Xml.Linq.dll" /debug+ /debug:full /filealign:512 /optimize- /out:obj\Debug\HeaderSampleApplication1.exe /ruleset:E:\header-samples-master\.sonarqube\conf\SonarQubeRoslyn-cs.ruleset /errorlog:E:\header-samples-master\HeaderSampleApplication1\bin\Debug\HeaderSampleApplication1.exe.RoslynCA.json /subsystemversion:6.00 /target:exe /warnaserror- /utf8output /analyzer:C:\Users\527475\AppData\Local\Temp\5\.sonarqube\resources\0\Google.Protobuf.dll /analyzer:C:\Users\527475\AppData\Local\Temp\5\.sonarqube\resources\0\SonarAnalyzer.CSharp.dll /analyzer:C:\Users\527475\AppData\Local\Temp\5\.sonarqube\resources\0\SonarAnalyzer.dll /additionalfile:E:\header-samples-master\.sonarqube\conf\cs\SonarLint.xml /additionalfile:E:\header-samples-master\.sonarqube\conf\\HeaderSampleApplication1_4535\ProjectOutFolderPath.txt ProgramHeader.cs ProgramNoHeader.cs Properties\AssemblyInfo.cs "C:\Users\527475\AppData\Local\Temp\5\.NETFramework,Version=v4.5.2.AssemblyAttributes.cs"
+  Using shared compilation with compiler from directory: C:\Program Files (x86)\MSBuild\14.0\bin
+ProgramHeader.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication1\HeaderSampleApplication1.csproj]
+ProgramNoHeader.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication1\HeaderSampleApplication1.csproj]
+Properties\AssemblyInfo.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication1\HeaderSampleApplication1.csproj]
+_CopyAppConfigFile:
+  Copying file from "App.config" to "bin\Debug\HeaderSampleApplication1.exe.config".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\Debug\HeaderSampleApplication1.exe" to "bin\Debug\HeaderSampleApplication1.exe".
+  HeaderSampleApplication1 -> E:\header-samples-master\HeaderSampleApplication1\bin\Debug\HeaderSampleApplication1.exe
+  Copying file from "obj\Debug\HeaderSampleApplication1.pdb" to "bin\Debug\HeaderSampleApplication1.pdb".
+OverrideCodeAnalysisProperties:
+  Skipping FxCop analysis: the SonarQube ruleset does not exist. Ruleset: E:\header-samples-master\.sonarqube\conf\\SonarQubeFxCop-cs.ruleset
+SetStyleCopAnalysisSettings:
+  Setting 'sonar.stylecop.projectFilePath' to 'E:\header-samples-master\HeaderSampleApplication1\HeaderSampleApplication1.csproj'
+Done Building Project "E:\header-samples-master\HeaderSampleApplication1\HeaderSampleApplication1.csproj" (Rebuild target(s)).
+
+Project "E:\header-samples-master\HeaderSampleApplication.sln" (1) is building "E:\header-samples-master\HeaderSampleApplication2\HeaderSampleApplication2.csproj" (3) on node 1 (Rebuild target(s)).
+CoreClean:
+  Deleting file "E:\header-samples-master\HeaderSampleApplication2\bin\Debug\HeaderSampleApplication2.exe.config".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication2\bin\Debug\HeaderSampleApplication2.exe".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication2\bin\Debug\HeaderSampleApplication2.pdb".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication2\obj\Debug\HeaderSampleApplication2.exe".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication2\obj\Debug\HeaderSampleApplication2.pdb".
+GenerateBindingRedirects:
+  No suggested binding redirects from ResolveAssemblyReferences.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CreateProjectSpecificDirs:
+  Directory "E:\header-samples-master\.sonarqube\out\\HeaderSampleApplication2_6905" doesn't exist. Skipping.
+  Creating directory "E:\header-samples-master\.sonarqube\out\\HeaderSampleApplication2_6905".
+  Directory "E:\header-samples-master\.sonarqube\conf\\HeaderSampleApplication2_6905" doesn't exist. Skipping.
+  Creating directory "E:\header-samples-master\.sonarqube\conf\\HeaderSampleApplication2_6905".
+CoreCompile:
+  C:\Program Files (x86)\MSBuild\14.0\bin\csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /platform:anycpu32bitpreferred /errorreport:prompt /warn:4 /define:CODE_ANALYSIS;DEBUG;TRACE /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Microsoft.CSharp.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Data.DataSetExtensions.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Data.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Net.Http.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Xml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Xml.Linq.dll" /debug+ /debug:full /filealign:512 /optimize- /out:obj\Debug\HeaderSampleApplication2.exe /ruleset:E:\header-samples-master\.sonarqube\conf\SonarQubeRoslyn-cs.ruleset /errorlog:E:\header-samples-master\HeaderSampleApplication2\bin\Debug\HeaderSampleApplication2.exe.RoslynCA.json /subsystemversion:6.00 /target:exe /warnaserror- /utf8output /analyzer:C:\Users\527475\AppData\Local\Temp\5\.sonarqube\resources\0\Google.Protobuf.dll /analyzer:C:\Users\527475\AppData\Local\Temp\5\.sonarqube\resources\0\SonarAnalyzer.CSharp.dll /analyzer:C:\Users\527475\AppData\Local\Temp\5\.sonarqube\resources\0\SonarAnalyzer.dll /additionalfile:E:\header-samples-master\.sonarqube\conf\cs\SonarLint.xml /additionalfile:E:\header-samples-master\.sonarqube\conf\\HeaderSampleApplication2_6905\ProjectOutFolderPath.txt ProgramNoHeader.cs ProgramHeader.cs Properties\AssemblyInfo.cs "C:\Users\527475\AppData\Local\Temp\5\.NETFramework,Version=v4.5.2.AssemblyAttributes.cs"
+  Using shared compilation with compiler from directory: C:\Program Files (x86)\MSBuild\14.0\bin
+ProgramNoHeader.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication2\HeaderSampleApplication2.csproj]
+ProgramHeader.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication2\HeaderSampleApplication2.csproj]
+Properties\AssemblyInfo.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication2\HeaderSampleApplication2.csproj]
+_CopyAppConfigFile:
+  Copying file from "App.config" to "bin\Debug\HeaderSampleApplication2.exe.config".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\Debug\HeaderSampleApplication2.exe" to "bin\Debug\HeaderSampleApplication2.exe".
+  HeaderSampleApplication2 -> E:\header-samples-master\HeaderSampleApplication2\bin\Debug\HeaderSampleApplication2.exe
+  Copying file from "obj\Debug\HeaderSampleApplication2.pdb" to "bin\Debug\HeaderSampleApplication2.pdb".
+OverrideCodeAnalysisProperties:
+  Skipping FxCop analysis: the SonarQube ruleset does not exist. Ruleset: E:\header-samples-master\.sonarqube\conf\\SonarQubeFxCop-cs.ruleset
+SetStyleCopAnalysisSettings:
+  Setting 'sonar.stylecop.projectFilePath' to 'E:\header-samples-master\HeaderSampleApplication2\HeaderSampleApplication2.csproj'
+Done Building Project "E:\header-samples-master\HeaderSampleApplication2\HeaderSampleApplication2.csproj" (Rebuild target(s)).
+
+Project "E:\header-samples-master\HeaderSampleApplication.sln" (1) is building "E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj" (4) on node 1 (Rebuild target(s)).
+CoreClean:
+  Deleting file "E:\header-samples-master\HeaderSampleApplication3\bin\Debug\HeaderSampleApplication3.exe.config".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication3\bin\Debug\HeaderSampleApplication3.exe".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication3\bin\Debug\HeaderSampleApplication3.pdb".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication3\obj\Debug\HeaderSampleApplication3.exe".
+  Deleting file "E:\header-samples-master\HeaderSampleApplication3\obj\Debug\HeaderSampleApplication3.pdb".
+GenerateBindingRedirects:
+  No suggested binding redirects from ResolveAssemblyReferences.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CreateProjectSpecificDirs:
+  Directory "E:\header-samples-master\.sonarqube\out\\HeaderSampleApplication3_8565" doesn't exist. Skipping.
+  Creating directory "E:\header-samples-master\.sonarqube\out\\HeaderSampleApplication3_8565".
+  Directory "E:\header-samples-master\.sonarqube\conf\\HeaderSampleApplication3_8565" doesn't exist. Skipping.
+  Creating directory "E:\header-samples-master\.sonarqube\conf\\HeaderSampleApplication3_8565".
+CoreCompile:
+  C:\Program Files (x86)\MSBuild\14.0\bin\csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /platform:anycpu32bitpreferred /errorreport:prompt /warn:4 /define:CODE_ANALYSIS;DEBUG;TRACE /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Microsoft.CSharp.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Data.DataSetExtensions.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Data.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Net.Http.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Xml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Xml.Linq.dll" /debug+ /debug:full /filealign:512 /optimize- /out:obj\Debug\HeaderSampleApplication3.exe /ruleset:E:\header-samples-master\.sonarqube\conf\SonarQubeRoslyn-cs.ruleset /errorlog:E:\header-samples-master\HeaderSampleApplication3\bin\Debug\HeaderSampleApplication3.exe.RoslynCA.json /subsystemversion:6.00 /target:exe /warnaserror- /utf8output /analyzer:C:\Users\527475\AppData\Local\Temp\5\.sonarqube\resources\0\Google.Protobuf.dll /analyzer:C:\Users\527475\AppData\Local\Temp\5\.sonarqube\resources\0\SonarAnalyzer.CSharp.dll /analyzer:C:\Users\527475\AppData\Local\Temp\5\.sonarqube\resources\0\SonarAnalyzer.dll /additionalfile:E:\header-samples-master\.sonarqube\conf\cs\SonarLint.xml /additionalfile:E:\header-samples-master\.sonarqube\conf\\HeaderSampleApplication3_8565\ProjectOutFolderPath.txt ProgramHeader2.cs ProgramHeader1.cs ProgramNoHeader.cs Properties\AssemblyInfo.cs "C:\Users\527475\AppData\Local\Temp\5\.NETFramework,Version=v4.5.2.AssemblyAttributes.cs"
+  Using shared compilation with compiler from directory: C:\Program Files (x86)\MSBuild\14.0\bin
+ProgramHeader2.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj]
+ProgramHeader1.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj]
+ProgramNoHeader.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj]
+Properties\AssemblyInfo.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj]
+_CopyAppConfigFile:
+  Copying file from "App.config" to "bin\Debug\HeaderSampleApplication3.exe.config".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\Debug\HeaderSampleApplication3.exe" to "bin\Debug\HeaderSampleApplication3.exe".
+  HeaderSampleApplication3 -> E:\header-samples-master\HeaderSampleApplication3\bin\Debug\HeaderSampleApplication3.exe
+  Copying file from "obj\Debug\HeaderSampleApplication3.pdb" to "bin\Debug\HeaderSampleApplication3.pdb".
+OverrideCodeAnalysisProperties:
+  Skipping FxCop analysis: the SonarQube ruleset does not exist. Ruleset: E:\header-samples-master\.sonarqube\conf\\SonarQubeFxCop-cs.ruleset
+SetStyleCopAnalysisSettings:
+  Setting 'sonar.stylecop.projectFilePath' to 'E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj'
+Done Building Project "E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj" (Rebuild target(s)).
+
+Done Building Project "E:\header-samples-master\HeaderSampleApplication.sln" (Rebuild target(s)).
+
+
+Build succeeded.
+
+"E:\header-samples-master\HeaderSampleApplication.sln" (Rebuild target) (1) ->
+"E:\header-samples-master\HeaderSampleApplication1\HeaderSampleApplication1.csproj" (Rebuild target) (2) ->
+(CoreCompile target) ->
+  ProgramHeader.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication1\HeaderSampleApplication1.csproj]
+  ProgramNoHeader.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication1\HeaderSampleApplication1.csproj]
+  Properties\AssemblyInfo.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication1\HeaderSampleApplication1.csproj]
+
+
+"E:\header-samples-master\HeaderSampleApplication.sln" (Rebuild target) (1) ->
+"E:\header-samples-master\HeaderSampleApplication2\HeaderSampleApplication2.csproj" (Rebuild target) (3) ->
+  ProgramNoHeader.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication2\HeaderSampleApplication2.csproj]
+  ProgramHeader.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication2\HeaderSampleApplication2.csproj]
+  Properties\AssemblyInfo.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication2\HeaderSampleApplication2.csproj]
+
+
+"E:\header-samples-master\HeaderSampleApplication.sln" (Rebuild target) (1) ->
+"E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj" (Rebuild target) (4) ->
+  ProgramHeader2.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj]
+  ProgramHeader1.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj]
+  ProgramNoHeader.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj]
+  Properties\AssemblyInfo.cs(1,1): warning S1451: Add or update the header of this file. [E:\header-samples-master\HeaderSampleApplication3\HeaderSampleApplication3.csproj]
+
+    10 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.80
+
+E:\header-samples-master>"C:\SonarAnalyzer\SonarQube.Scanner.MSBuild.exe" end
+SonarQube Scanner for MSBuild 3.0
+Default properties file was found at C:\SonarAnalyzer\SonarQube.Analysis.xml
+Loading analysis properties from C:\SonarAnalyzer\SonarQube.Analysis.xml
+sonar.verbose=true was specified - setting the log verbosity to 'Debug'
+Post-processing started.
+13:51:44.5  Using environment variables to determine the download directory...
+13:51:44.536  13:51:44.536  sonar.verbose=true was specified - setting the log verbosity to 'Debug'
+13:51:44.538  Loading the SonarQube analysis config from E:\header-samples-master\.sonarqube\conf\SonarQubeAnalysisConfig.xml
+13:51:44.539  Not running under TeamBuild
+13:51:44.54  Analysis base directory: E:\header-samples-master\.sonarqube
+Build directory:
+Bin directory: E:\header-samples-master\.sonarqube\bin
+Config directory: E:\header-samples-master\.sonarqube\conf
+Output directory: E:\header-samples-master\.sonarqube\out
+Config file: E:\header-samples-master\.sonarqube\conf\SonarQubeAnalysisConfig.xml
+Generating SonarQube project properties file to E:\header-samples-master\.sonarqube\out\sonar-project.properties
+The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed: E:\header-samples-master\HeaderSampleApplication1\bin\Debug\HeaderSampleApplication1.exe.RoslynCA.json
+The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed: E:\header-samples-master\HeaderSampleApplication2\bin\Debug\HeaderSampleApplication2.exe.RoslynCA.json
+The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed: E:\header-samples-master\HeaderSampleApplication3\bin\Debug\HeaderSampleApplication3.exe.RoslynCA.json
+Setting analysis property: sonar.visualstudio.enable=false
+Writing processing summary to E:\header-samples-master\.sonarqube\out\ProjectInfo.log
+SONAR_SCANNER_OPTS is not configured. Setting it to the default value of -Xmx1024m
+Calling the SonarQube Scanner...
+Setting environment variable 'SONAR_SCANNER_OPTS'. Value: -Xmx1024m
+Executing file C:\SonarAnalyzer\sonar-scanner-3.0.3.778\bin\sonar-scanner.bat
+  Args: -Dsonar.scanAllFiles=true -Dproject.settings=E:\header-samples-master\.sonarqube\out\sonar-project.properties
+  Working directory: E:\header-samples-master
+  Timeout (ms):-1
+  Process id: 20316
+INFO: Scanner configuration file: C:\SonarAnalyzer\sonar-scanner-3.0.3.778\bin\..\conf\sonar-scanner.properties
+INFO: Project root configuration file: E:\header-samples-master\.sonarqube\out\sonar-project.properties
+13:51:45.048 INFO: SonarQube Scanner 3.0.3.778
+13:51:45.050 INFO: Java 1.8.0_91 Oracle Corporation (64-bit)
+13:51:45.050 INFO: Windows Server 2008 R2 6.1 amd64
+13:51:45.050 INFO: SONAR_SCANNER_OPTS=-Xmx1024m
+13:51:45.214 DEBUG: keyStore is :
+13:51:45.214 DEBUG: keyStore type is : jks
+13:51:45.214 DEBUG: keyStore provider is :
+13:51:45.214 DEBUG: init keystore
+13:51:45.215 DEBUG: init keymanager of type SunX509
+13:51:45.309 DEBUG: Create : C:\Users\527475\.sonar\cache
+13:51:45.310 INFO: User cache: C:\Users\527475\.sonar\cache
+13:51:45.310 DEBUG: Create : C:\Users\527475\.sonar\cache\_tmp
+13:51:45.311 DEBUG: Extract sonar-scanner-api-batch in temp...
+13:51:45.327 DEBUG: Get bootstrap index...
+13:51:45.327 DEBUG: Download: http://localhost:9004/batch/index
+13:51:45.415 DEBUG: Get bootstrap completed
+13:51:45.418 DEBUG: Download http://localhost:9004/batch/file?name=sonar-scanner-engine-shaded-5.6.6.jar to C:\Users\527475\.sonar\cache\_tmp\fileCache5433983242055789374.tmp
+13:51:50.076 DEBUG: Create isolated classloader...
+13:51:50.089 DEBUG: Start temp cleaning...
+13:51:50.097 DEBUG: Temp cleaning done
+13:51:50.097 DEBUG: Execution getVersion
+13:51:50.104 DEBUG: Execution start
+13:51:50.396 DEBUG: Publish global mode
+13:51:50.487 INFO: Load global repositories
+13:51:50.621 DEBUG: GET 200 http://localhost:9004/batch/global | time=134ms
+13:51:50.706 INFO: Load global repositories (done) | time=220ms
+13:51:50.725 INFO: User cache: C:\Users\527475\.sonar\cache
+13:51:50.933 INFO: Load plugins index
+13:51:50.939 DEBUG: GET 200 http://localhost:9004/deploy/plugins/index.txt | time=6ms
+13:51:50.943 INFO: Load plugins index (done) | time=10ms
+13:51:50.944 DEBUG: Load plugins
+13:51:50.947 DEBUG: Download plugin sonar-csharp-plugin-6.4.0.3347.jar to C:\Users\527475\.sonar\cache\_tmp\fileCache1263467939112308149.tmp
+13:51:50.950 DEBUG: GET 200 http://localhost:9004/deploy/plugins/csharp/sonar-csharp-plugin-6.4.0.3347.jar | time=3ms
+13:51:51.310 DEBUG: Download plugin sonar-java-plugin-3.13.1.jar to C:\Users\527475\.sonar\cache\_tmp\fileCache4545433625887390825.tmp
+13:51:51.312 DEBUG: GET 200 http://localhost:9004/deploy/plugins/java/sonar-java-plugin-3.13.1.jar | time=2ms
+13:51:51.856 DEBUG: Download plugin sonar-scm-git-plugin-1.2.jar to C:\Users\527475\.sonar\cache\_tmp\fileCache7256512264743346698.tmp
+13:51:51.859 DEBUG: GET 200 http://localhost:9004/deploy/plugins/scmgit/sonar-scm-git-plugin-1.2.jar | time=3ms
+13:51:52.238 DEBUG: Download plugin sonar-scm-svn-plugin-1.3.jar to C:\Users\527475\.sonar\cache\_tmp\fileCache4140401578844287286.tmp
+13:51:52.240 DEBUG: GET 200 http://localhost:9004/deploy/plugins/scmsvn/sonar-scm-svn-plugin-1.3.jar | time=2ms
+13:51:53.028 DEBUG: Download plugin sonar-javascript-plugin-2.11.jar to C:\Users\527475\.sonar\cache\_tmp\fileCache3414843447713270659.tmp
+13:51:53.031 DEBUG: GET 200 http://localhost:9004/deploy/plugins/javascript/sonar-javascript-plugin-2.11.jar | time=3ms
+13:51:53.233 DEBUG: Load plugins (done) | time=2289ms
+13:51:53.692 DEBUG: API compatibility mode is enabled on plugin Java [java] (built with API lower than 5.2)
+13:51:54.489 DEBUG: API compatibility mode is enabled on plugin SVN [scmsvn] (built with API lower than 5.2)
+13:51:54.821 DEBUG: API compatibility mode is enabled on plugin Git [scmgit] (built with API lower than 5.2)
+13:51:54.956 DEBUG: API compatibility mode is enabled on plugin JavaScript [javascript] (built with API lower than 5.2)
+13:51:55.932 DEBUG: Plugins:
+13:51:55.932 DEBUG:   * SonarC# 6.4.0.3347 (csharp)
+13:51:55.933 DEBUG:   * Java 3.13.1 (java)
+13:51:55.933 DEBUG:   * SVN 1.3 (scmsvn)
+13:51:55.933 DEBUG:   * Git 1.2 (scmgit)
+13:51:55.933 DEBUG:   * JavaScript 2.11 (javascript)
+13:51:55.950 DEBUG: Execution getVersion
+13:51:55.951 INFO: SonarQube server 5.6.6
+13:51:55.951 INFO: Default locale: "en_IN", source code encoding: "windows-1252" (analysis is platform dependent)
+13:51:55.951 DEBUG: Work directory: E:\header-samples-master\.sonarqube\out\.sonar
+13:51:55.951 DEBUG: Execution getVersion
+13:51:55.951 DEBUG: Execution execute
+13:51:56.711 INFO: Process project properties
+13:51:56.719 DEBUG: Process project properties (done) | time=8ms
+13:51:56.845 INFO: Load project repositories
+13:51:56.908 DEBUG: GET 200 http://localhost:9004/batch/project.protobuf?key=samplekey.cs | time=62ms
+13:51:56.965 INFO: Load project repositories (done) | time=119ms
+13:51:57.038 DEBUG: Available languages:
+13:51:57.039 DEBUG:   * C# => "cs"
+13:51:57.039 DEBUG:   * Java => "java"
+13:51:57.039 DEBUG:   * JavaScript => "js"
+13:51:57.041 INFO: Load quality profiles
+13:51:57.086 DEBUG: GET 200 http://localhost:9004/api/qualityprofiles/search.protobuf?projectKey=samplekey.cs | time=45ms
+13:51:57.089 INFO: Load quality profiles (done) | time=48ms
+13:51:57.094 INFO: Load active rules
+13:51:57.155 DEBUG: GET 200 http://localhost:9004/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives&activation=true&qprofile=cs-cri-60317&p=1&ps=500 | time=61ms
+13:51:57.361 DEBUG: GET 200 http://localhost:9004/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives&activation=true&qprofile=java-sonar-way-01449&p=1&ps=500 | time=180ms
+13:51:57.499 DEBUG: GET 200 http://localhost:9004/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives&activation=true&qprofile=js-sonar-way-24713&p=1&ps=500 | time=90ms
+13:51:57.507 INFO: Load active rules (done) | time=413ms
+13:51:57.563 WARN: SCM provider autodetection failed. No SCM provider claims to support this project. Please use sonar.scm.provider to define SCM of your project.
+13:51:57.563 INFO: Publish mode
+13:51:57.563 DEBUG: Start recursive analysis of project modules
+13:51:57.564 INFO: -------------  Scan HeaderSampleApplication1
+13:51:57.675 INFO: Load server rules
+13:51:57.890 DEBUG: GET 200 http://localhost:9004/api/rules/list.protobuf | time=214ms
+13:51:57.904 INFO: Load server rules (done) | time=229ms
+13:51:57.956 DEBUG: Initializers :
+13:51:57.956 INFO: Base dir: E:\header-samples-master\HeaderSampleApplication1
+13:51:57.957 INFO: Working dir: E:\header-samples-master\.sonarqube\out\.sonar\mod0
+13:51:57.958 INFO: Source paths: ProgramHeader.cs, ProgramNoHeader.cs, Properties/AssemblyInfo.cs, App.config, HeaderSampleApplication1.ruleset, packages.config
+13:51:57.959 INFO: Source encoding: UTF-8, default locale: en_IN
+13:51:57.959 INFO: Index files
+13:51:57.966 DEBUG: Declared extensions of language C# were converted to sonar.lang.patterns.cs : **/*.cs
+13:51:57.966 DEBUG: Declared extensions of language Java were converted to sonar.lang.patterns.java : **/*.java,**/*.jav
+13:51:57.966 DEBUG: Declared extensions of language JavaScript were converted to sonar.lang.patterns.js : **/*.js
+13:51:57.971 DEBUG: Language of file 'ProgramHeader.cs' is detected to be 'cs'
+13:51:57.984 INFO: Analyzer working directory contains 5 .pb file(s)
+13:51:58.018 DEBUG: Language of file 'ProgramNoHeader.cs' is detected to be 'cs'
+13:51:58.019 DEBUG: Language of file 'Properties/AssemblyInfo.cs' is detected to be 'cs'
+13:51:58.030 INFO: 3 files indexed
+13:51:58.035 INFO: Quality profile for cs: CRI
+13:51:58.431 INFO: JaCoCoSensor: JaCoCo report not found : E:\header-samples-master\HeaderSampleApplication1\target\jacoco.exec
+13:51:58.431 INFO: JaCoCoItSensor: JaCoCo IT report not found: E:\header-samples-master\HeaderSampleApplication1\target\jacoco-it.exec
+13:51:58.433 DEBUG: Code colorizer, supported languages:
+13:51:58.442 DEBUG: Sensors : Lines Sensor (wrapped) -> SCM Sensor (wrapped) -> C# (wrapped) -> C# Unit Tests Coverage Report Import (wrapped) -> C# Integration Tests Coverage Report Import (wrapped) -> C# Unit Test Results Import (wrapped) -> Zero Coverage Sensor (wrapped) -> Code Colorizer Sensor (wrapped) -> CPD Block Indexer (wrapped)
+13:51:58.442 INFO: Sensor Lines Sensor (wrapped)
+13:51:58.454 INFO: Sensor Lines Sensor (wrapped) (done) | time=12ms
+13:51:58.454 INFO: Sensor SCM Sensor (wrapped)
+13:51:58.454 INFO: No SCM system was detected. You can use the 'sonar.scm.provider' property to explicitly specify it.
+13:51:58.454 INFO: Sensor SCM Sensor (wrapped) (done) | time=0ms
+13:51:58.454 INFO: Sensor C# (wrapped)
+13:51:58.460 INFO: Importing analysis results from E:\header-samples-master\.sonarqube\out\HeaderSampleApplication1_4535\output-cs
+13:51:58.650 INFO: Importing Roslyn report
+13:51:58.734 INFO: Sensor C# (wrapped) (done) | time=280ms
+13:51:58.734 INFO: Sensor C# Unit Tests Coverage Report Import (wrapped)
+13:51:58.734 DEBUG: No coverage property. Skip Sensor
+13:51:58.734 INFO: Sensor C# Unit Tests Coverage Report Import (wrapped) (done) | time=0ms
+13:51:58.735 INFO: Sensor C# Integration Tests Coverage Report Import (wrapped)
+13:51:58.735 DEBUG: No coverage property. Skip Sensor
+13:51:58.735 INFO: Sensor C# Integration Tests Coverage Report Import (wrapped) (done) | time=0ms
+13:51:58.735 INFO: Sensor C# Unit Test Results Import (wrapped)
+13:51:58.735 DEBUG: No unit test results property. Skip Sensor
+13:51:58.736 INFO: Sensor C# Unit Test Results Import (wrapped) (done) | time=1ms
+13:51:58.736 INFO: Sensor Zero Coverage Sensor (wrapped)
+13:51:58.749 INFO: Sensor Zero Coverage Sensor (wrapped) (done) | time=13ms
+13:51:58.750 INFO: Sensor Code Colorizer Sensor (wrapped)
+13:51:58.751 INFO: Sensor Code Colorizer Sensor (wrapped) (done) | time=1ms
+13:51:58.751 INFO: Sensor CPD Block Indexer (wrapped)
+13:51:58.751 INFO: DefaultCpdBlockIndexer is used for cs
+13:51:58.752 DEBUG: No CpdMapping for language cs
+13:51:58.753 INFO: Sensor CPD Block Indexer (wrapped) (done) | time=2ms
+13:51:58.754 INFO: -------------  Scan HeaderSampleApplication2
+13:51:58.773 DEBUG: Initializers :
+13:51:58.773 INFO: Base dir: E:\header-samples-master\HeaderSampleApplication2
+13:51:58.774 INFO: Working dir: E:\header-samples-master\.sonarqube\out\.sonar\mod1
+13:51:58.774 INFO: Source paths: ProgramNoHeader.cs, ProgramHeader.cs, Properties/AssemblyInfo.cs, App.config, HeaderSampleApplication2.ruleset, packages.config
+13:51:58.774 INFO: Source encoding: UTF-8, default locale: en_IN
+13:51:58.774 INFO: Index files
+13:51:58.774 DEBUG: Declared extensions of language C# were converted to sonar.lang.patterns.cs : **/*.cs
+13:51:58.775 DEBUG: Declared extensions of language Java were converted to sonar.lang.patterns.java : **/*.java,**/*.jav
+13:51:58.775 DEBUG: Declared extensions of language JavaScript were converted to sonar.lang.patterns.js : **/*.js
+13:51:58.779 DEBUG: Language of file 'ProgramNoHeader.cs' is detected to be 'cs'
+13:51:58.779 INFO: Analyzer working directory contains 5 .pb file(s)
+13:51:58.781 DEBUG: Language of file 'ProgramHeader.cs' is detected to be 'cs'
+13:51:58.782 DEBUG: Language of file 'Properties/AssemblyInfo.cs' is detected to be 'cs'
+13:51:58.786 INFO: 3 files indexed
+13:51:58.787 INFO: Quality profile for cs: CRI
+13:51:58.810 INFO: JaCoCoSensor: JaCoCo report not found : E:\header-samples-master\HeaderSampleApplication2\target\jacoco.exec
+13:51:58.810 INFO: JaCoCoItSensor: JaCoCo IT report not found: E:\header-samples-master\HeaderSampleApplication2\target\jacoco-it.exec
+13:51:58.813 DEBUG: Sensors : Lines Sensor (wrapped) -> SCM Sensor (wrapped) -> C# (wrapped) -> C# Unit Tests Coverage Report Import (wrapped) -> C# Integration Tests Coverage Report Import (wrapped) -> C# Unit Test Results Import (wrapped) -> Zero Coverage Sensor (wrapped) -> Code Colorizer Sensor (wrapped) -> CPD Block Indexer (wrapped)
+13:51:58.813 INFO: Sensor Lines Sensor (wrapped)
+13:51:58.814 INFO: Sensor Lines Sensor (wrapped) (done) | time=1ms
+13:51:58.814 INFO: Sensor SCM Sensor (wrapped)
+13:51:58.814 INFO: No SCM system was detected. You can use the 'sonar.scm.provider' property to explicitly specify it.
+13:51:58.814 INFO: Sensor SCM Sensor (wrapped) (done) | time=0ms
+13:51:58.814 INFO: Sensor C# (wrapped)
+13:51:58.814 INFO: Importing analysis results from E:\header-samples-master\.sonarqube\out\HeaderSampleApplication2_6905\output-cs
+13:51:58.839 INFO: Importing Roslyn report
+13:51:58.854 INFO: Sensor C# (wrapped) (done) | time=40ms
+13:51:58.854 INFO: Sensor C# Unit Tests Coverage Report Import (wrapped)
+13:51:58.854 DEBUG: No coverage property. Skip Sensor
+13:51:58.854 INFO: Sensor C# Unit Tests Coverage Report Import (wrapped) (done) | time=0ms
+13:51:58.854 INFO: Sensor C# Integration Tests Coverage Report Import (wrapped)
+13:51:58.854 DEBUG: No coverage property. Skip Sensor
+13:51:58.854 INFO: Sensor C# Integration Tests Coverage Report Import (wrapped) (done) | time=0ms
+13:51:58.854 INFO: Sensor C# Unit Test Results Import (wrapped)
+13:51:58.854 DEBUG: No unit test results property. Skip Sensor
+13:51:58.854 INFO: Sensor C# Unit Test Results Import (wrapped) (done) | time=0ms
+13:51:58.854 INFO: Sensor Zero Coverage Sensor (wrapped)
+13:51:58.858 INFO: Sensor Zero Coverage Sensor (wrapped) (done) | time=4ms
+13:51:58.858 INFO: Sensor Code Colorizer Sensor (wrapped)
+13:51:58.858 INFO: Sensor Code Colorizer Sensor (wrapped) (done) | time=0ms
+13:51:58.858 INFO: Sensor CPD Block Indexer (wrapped)
+13:51:58.858 INFO: DefaultCpdBlockIndexer is used for cs
+13:51:58.858 DEBUG: No CpdMapping for language cs
+13:51:58.858 INFO: Sensor CPD Block Indexer (wrapped) (done) | time=0ms
+13:51:58.859 INFO: -------------  Scan HeaderSampleApplication3
+13:51:58.886 DEBUG: Initializers :
+13:51:58.886 INFO: Base dir: E:\header-samples-master\HeaderSampleApplication3
+13:51:58.886 INFO: Working dir: E:\header-samples-master\.sonarqube\out\.sonar\mod2
+13:51:58.887 INFO: Source paths: ProgramHeader2.cs, ProgramHeader1.cs, ProgramNoHeader.cs, Properties/AssemblyInfo.cs, App.config, HeaderSampleApplication3.ruleset, packages.config
+13:51:58.887 INFO: Source encoding: UTF-8, default locale: en_IN
+13:51:58.887 INFO: Index files
+13:51:58.887 DEBUG: Declared extensions of language C# were converted to sonar.lang.patterns.cs : **/*.cs
+13:51:58.887 DEBUG: Declared extensions of language Java were converted to sonar.lang.patterns.java : **/*.java,**/*.jav
+13:51:58.888 DEBUG: Declared extensions of language JavaScript were converted to sonar.lang.patterns.js : **/*.js
+13:51:58.896 DEBUG: Language of file 'ProgramHeader2.cs' is detected to be 'cs'
+13:51:58.897 INFO: Analyzer working directory contains 5 .pb file(s)
+13:51:58.905 DEBUG: Language of file 'ProgramHeader1.cs' is detected to be 'cs'
+13:51:58.906 DEBUG: Language of file 'ProgramNoHeader.cs' is detected to be 'cs'
+13:51:58.907 DEBUG: Language of file 'Properties/AssemblyInfo.cs' is detected to be 'cs'
+13:51:58.909 INFO: 4 files indexed
+13:51:58.910 INFO: Quality profile for cs: CRI
+13:51:58.917 INFO: JaCoCoSensor: JaCoCo report not found : E:\header-samples-master\HeaderSampleApplication3\target\jacoco.exec
+13:51:58.917 INFO: JaCoCoItSensor: JaCoCo IT report not found: E:\header-samples-master\HeaderSampleApplication3\target\jacoco-it.exec
+13:51:58.919 DEBUG: Sensors : Lines Sensor (wrapped) -> SCM Sensor (wrapped) -> C# (wrapped) -> C# Unit Tests Coverage Report Import (wrapped) -> C# Integration Tests Coverage Report Import (wrapped) -> C# Unit Test Results Import (wrapped) -> Zero Coverage Sensor (wrapped) -> Code Colorizer Sensor (wrapped) -> CPD Block Indexer (wrapped)
+13:51:58.919 INFO: Sensor Lines Sensor (wrapped)
+13:51:58.929 INFO: Sensor Lines Sensor (wrapped) (done) | time=10ms
+13:51:58.929 INFO: Sensor SCM Sensor (wrapped)
+13:51:58.929 INFO: No SCM system was detected. You can use the 'sonar.scm.provider' property to explicitly specify it.
+13:51:58.929 INFO: Sensor SCM Sensor (wrapped) (done) | time=0ms
+13:51:58.929 INFO: Sensor C# (wrapped)
+13:51:58.929 INFO: Importing analysis results from E:\header-samples-master\.sonarqube\out\HeaderSampleApplication3_8565\output-cs
+13:51:58.973 INFO: Importing Roslyn report
+13:51:58.997 INFO: Sensor C# (wrapped) (done) | time=68ms
+13:51:58.997 INFO: Sensor C# Unit Tests Coverage Report Import (wrapped)
+13:51:58.997 DEBUG: No coverage property. Skip Sensor
+13:51:58.997 INFO: Sensor C# Unit Tests Coverage Report Import (wrapped) (done) | time=0ms
+13:51:58.997 INFO: Sensor C# Integration Tests Coverage Report Import (wrapped)
+13:51:58.997 DEBUG: No coverage property. Skip Sensor
+13:51:58.997 INFO: Sensor C# Integration Tests Coverage Report Import (wrapped) (done) | time=0ms
+13:51:58.997 INFO: Sensor C# Unit Test Results Import (wrapped)
+13:51:58.997 DEBUG: No unit test results property. Skip Sensor
+13:51:58.998 INFO: Sensor C# Unit Test Results Import (wrapped) (done) | time=1ms
+13:51:58.998 INFO: Sensor Zero Coverage Sensor (wrapped)
+13:51:59.012 INFO: Sensor Zero Coverage Sensor (wrapped) (done) | time=14ms
+13:51:59.012 INFO: Sensor Code Colorizer Sensor (wrapped)
+13:51:59.012 INFO: Sensor Code Colorizer Sensor (wrapped) (done) | time=0ms
+13:51:59.012 INFO: Sensor CPD Block Indexer (wrapped)
+13:51:59.013 INFO: DefaultCpdBlockIndexer is used for cs
+13:51:59.013 DEBUG: No CpdMapping for language cs
+13:51:59.013 INFO: Sensor CPD Block Indexer (wrapped) (done) | time=1ms
+13:51:59.014 INFO: -------------  Scan Sample
+13:51:59.044 DEBUG: Initializers :
+13:51:59.044 INFO: Base dir: E:\header-samples-master
+13:51:59.044 INFO: Working dir: E:\header-samples-master\.sonarqube\out\.sonar
+13:51:59.044 INFO: Source encoding: windows-1252, default locale: en_IN
+13:51:59.081 INFO: JaCoCoSensor: JaCoCo report not found : E:\header-samples-master\target\jacoco.exec
+13:51:59.082 INFO: JaCoCoItSensor: JaCoCo IT report not found: E:\header-samples-master\target\jacoco-it.exec
+13:51:59.086 DEBUG: 'C#' skipped because there is no related file in current project
+13:51:59.086 DEBUG: 'C# Unit Tests Coverage Report Import' skipped because there is no related file in current project
+13:51:59.086 DEBUG: 'C# Integration Tests Coverage Report Import' skipped because there is no related file in current project
+13:51:59.088 DEBUG: Sensors : Lines Sensor (wrapped) -> SCM Sensor (wrapped) -> C# Unit Test Results Import (wrapped) -> Zero Coverage Sensor (wrapped) -> Code Colorizer Sensor (wrapped) -> CPD Block Indexer (wrapped)
+13:51:59.089 INFO: Sensor Lines Sensor (wrapped)
+13:51:59.089 INFO: Sensor Lines Sensor (wrapped) (done) | time=0ms
+13:51:59.089 INFO: Sensor SCM Sensor (wrapped)
+13:51:59.089 INFO: No SCM system was detected. You can use the 'sonar.scm.provider' property to explicitly specify it.
+13:51:59.089 INFO: Sensor SCM Sensor (wrapped) (done) | time=0ms
+13:51:59.089 INFO: Sensor C# Unit Test Results Import (wrapped)
+13:51:59.090 DEBUG: No unit test results property. Skip Sensor
+13:51:59.091 INFO: Sensor C# Unit Test Results Import (wrapped) (done) | time=1ms
+13:51:59.091 INFO: Sensor Zero Coverage Sensor (wrapped)
+13:51:59.091 INFO: Sensor Zero Coverage Sensor (wrapped) (done) | time=0ms
+13:51:59.091 INFO: Sensor Code Colorizer Sensor (wrapped)
+13:51:59.091 INFO: Sensor Code Colorizer Sensor (wrapped) (done) | time=0ms
+13:51:59.091 INFO: Sensor CPD Block Indexer (wrapped)
+13:51:59.092 INFO: Sensor CPD Block Indexer (wrapped) (done) | time=1ms
+13:51:59.093 INFO: Calculating CPD for 3 files
+13:51:59.096 DEBUG: Detection of duplications for samplekey.cs:samplekey.cs:882092E9-0C0D-4C6E-9CDC-EBD8C458E15B:Properties/AssemblyInfo.cs
+13:51:59.116 DEBUG: Detection of duplications for samplekey.cs:samplekey.cs:439EF622-3379-4AF6-B75C-94623858C8A2:Properties/AssemblyInfo.cs
+13:51:59.123 DEBUG: Detection of duplications for samplekey.cs:samplekey.cs:BC064C49-D9F9-4F5F-B833-DD2C3BDE497E:Properties/AssemblyInfo.cs
+13:51:59.125 INFO: CPD calculation finished
+13:51:59.276 INFO: Analysis report generated in 147ms, dir size=36 KB
+13:51:59.311 INFO: Analysis reports compressed in 35ms, zip size=26 KB
+13:51:59.311 INFO: Analysis report generated in E:\header-samples-master\.sonarqube\out\.sonar\batch-report
+13:51:59.311 DEBUG: Upload report
+13:51:59.397 DEBUG: POST 200 http://localhost:9004/api/ce/submit?projectKey=samplekey.cs&projectName=Sample | time=85ms
+13:51:59.399 INFO: Analysis report uploaded in 88ms
+13:51:59.400 INFO: ANALYSIS SUCCESSFUL, you can browse http://localhost:9004/dashboard/index/samplekey.cs
+13:51:59.400 INFO: Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+13:51:59.400 INFO: More about the report processing at http://localhost:9004/api/ce/task?id=AV5bbnXGy0vuY7N4Usmf
+13:51:59.405 DEBUG: Report metadata written to E:\header-samples-master\.sonarqube\out\.sonar\report-task.txt
+13:51:59.410 DEBUG: Post-jobs :
+13:51:59.413 INFO: ------------------------------------------------------------------------
+13:51:59.413 INFO: EXECUTION SUCCESS
+13:51:59.413 INFO: ------------------------------------------------------------------------
+13:51:59.413 INFO: Total time: 14.419s
+13:51:59.500 INFO: Final Memory: 45M/254M
+13:51:59.500 INFO: ------------------------------------------------------------------------
+13:51:59.501 DEBUG: Execution getVersion
+13:51:59.504 DEBUG: Execution stop
+Process returned exit code 0
+The SonarQube Scanner has finished
+13:51:59.65  Creating a summary markdown file...
+13:51:59.653  Analysis results: http://localhost:9004/dashboard/index/samplekey.cs
+13:51:59.653  Post-processing succeeded.
+
+E:\header-samples-master>
