@@ -1,0 +1,87 @@
+[INFO] Reactor Summary:
+[INFO]
+[INFO] Multi Module Project Parent ....................... FAILURE [  5.365 s]
+[INFO] Server ............................................ SKIPPED
+[INFO] Webapp ............................................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.353 s
+[INFO] Finished at: 2018-05-04T16:49:53+05:30
+[INFO] Final Memory: 16M/262M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar (default-cli) on project multi-module-parent: Unable to load component class org.sonar.batch.scan.ProjectLock: Unable to load component class org.sonar.api.batch.bootstrap.ProjectReactor: Project 'ProjectKey.java' can't have 2 modules with the following key: ProjectKey.java -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar (default-cli) on project multi-module-parent: Unable to load component class org.sonar.batch.scan.ProjectLock
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:216)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+        at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:108)
+        at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:76)
+        at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+        at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:116)
+        at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:361)
+        at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:155)
+        at org.apache.maven.cli.MavenCli.execute(MavenCli.java:584)
+        at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:213)
+        at org.apache.maven.cli.MavenCli.main(MavenCli.java:157)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.apache.maven.plugin.MojoExecutionException: Unable to load component class org.sonar.batch.scan.ProjectLock
+        at org.sonarsource.scanner.maven.bootstrap.ScannerBootstrapper.execute(ScannerBootstrapper.java:65)
+        at org.sonarsource.scanner.maven.SonarQubeMojo.execute(SonarQubeMojo.java:108)
+        at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:133)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+        ... 19 more
+Caused by: java.lang.IllegalStateException: Unable to load component class org.sonar.batch.scan.ProjectLock
+        at org.sonar.core.platform.ComponentContainer$ExtendedDefaultPicoContainer.getComponent(ComponentContainer.java:69)
+        at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:678)
+        at org.sonar.core.platform.ComponentContainer.getComponentByType(ComponentContainer.java:272)
+        at org.sonar.batch.scan.ProjectScanContainer.doBeforeStart(ProjectScanContainer.java:108)
+        at org.sonar.core.platform.ComponentContainer.startComponents(ComponentContainer.java:140)
+        at org.sonar.core.platform.ComponentContainer.execute(ComponentContainer.java:127)
+        at org.sonar.batch.task.ScanTask.execute(ScanTask.java:47)
+        at org.sonar.batch.task.TaskContainer.doAfterStart(TaskContainer.java:86)
+        at org.sonar.core.platform.ComponentContainer.startComponents(ComponentContainer.java:142)
+        at org.sonar.core.platform.ComponentContainer.execute(ComponentContainer.java:127)
+        at org.sonar.batch.bootstrap.GlobalContainer.executeTask(GlobalContainer.java:106)
+        at org.sonar.batch.bootstrapper.Batch.executeTask(Batch.java:119)
+        at org.sonar.batch.bootstrapper.Batch.execute(Batch.java:79)
+        at org.sonarsource.scanner.api.internal.batch.BatchIsolatedLauncher.execute(BatchIsolatedLauncher.java:46)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.sonarsource.scanner.api.internal.IsolatedLauncherProxy.invoke(IsolatedLauncherProxy.java:60)
+        at com.sun.proxy.$Proxy19.execute(Unknown Source)
+        at org.sonarsource.scanner.api.EmbeddedScanner.doExecute(EmbeddedScanner.java:171)
+        at org.sonarsource.scanner.api.EmbeddedScanner.execute(EmbeddedScanner.java:128)
+        at org.sonarsource.scanner.maven.bootstrap.ScannerBootstrapper.execute(ScannerBootstrapper.java:63)
+        ... 22 more
+Caused by: java.lang.IllegalStateException: Unable to load component class org.sonar.api.batch.bootstrap.ProjectReactor
+        at org.sonar.core.platform.ComponentContainer$ExtendedDefaultPicoContainer.getComponent(ComponentContainer.java:69)
+        at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:632)
+        at org.picocontainer.parameters.BasicComponentParameter$1.resolveInstance(BasicComponentParameter.java:118)
+        at org.picocontainer.parameters.ComponentParameter$1.resolveInstance(ComponentParameter.java:136)
+        at org.picocontainer.injectors.SingleMemberInjector.getParameter(SingleMemberInjector.java:78)
+        at org.picocontainer.injectors.ConstructorInjector$CtorAndAdapters.getParameterArguments(ConstructorInjector.java:309)
+        at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:335)
+        at org.picocontainer.injectors.AbstractInjector$ThreadLocalCyclicDependencyGuard.observe(AbstractInjector.java:270)
+        at org.picocontainer.injectors.ConstructorInjector.getComponentInstance(ConstructorInjector.java:364)
+        at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.getComponentInstance(AbstractInjectionFactory.java:56)
+        at org.picocontainer.behaviors.AbstractBehavior.getComponentInstance(AbstractBehavior.java:64)
+        at org.picocontainer.behaviors.Stored.getComponentInstance(Stored.java:91)
+        at org.picocontainer.DefaultPicoContainer.getInstance(DefaultPicoContainer.java:699)
+        at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:647)
+        at org.sonar.core.platform.ComponentContainer$ExtendedDefaultPicoContainer.getComponent(ComponentContainer.java:67)
+        ... 44 more
+Caused by: Project 'ProjectKey.java' can't have 2 modules with the following key: ProjectKey.java
+[ERROR]
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
